@@ -29,11 +29,15 @@ public class BootStrapData implements CommandLineRunner {
 
         Author a1 = new Author("Gene", "Sniegowski");
         Book b1 = new Book("My Book", "111111111");
+        Author a2 = new Author("Gene", "Sniegowski 2");
         Book b2 = new Book("My Book2", "111111111");
+        Author a3 = new Author("Gene", "Sniegowski 3");
         Book b3 = new Book("My Book3", "111111111");
         a1.getBooks().add(b1);
         b1.setPublisher(p1);
+        a2.getBooks().add(b2);
         b2.setPublisher(p1);
+        a3.getBooks().add(b3);
         b3.setPublisher(p1);
         bookRepository.save(b1);
         bookRepository.save(b2);
@@ -49,7 +53,10 @@ public class BootStrapData implements CommandLineRunner {
         publisherRepository.save(p1);
         authorRepository.save(a1);
         bookRepository.save(b1);
-
+        authorRepository.save(a2);
+        bookRepository.save(b2);
+        authorRepository.save(a3);
+        bookRepository.save(b3);
         publisherRepository.save(p1);
 
         System.out.println("Started in Bootstrap");
